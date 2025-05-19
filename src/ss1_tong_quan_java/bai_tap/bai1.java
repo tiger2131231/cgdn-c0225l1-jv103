@@ -1,4 +1,4 @@
-package ss1_tong_quan_java.baitap;
+package ss1_tong_quan_java.bai_tap;
 
 import java.util.Scanner;
 

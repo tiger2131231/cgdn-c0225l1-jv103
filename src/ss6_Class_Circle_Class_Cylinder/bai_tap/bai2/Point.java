@@ -35,6 +35,7 @@ public class Point {
 
     public float[] getXY() {
         return new float[] {x, y};
+
     }
 
     @Override

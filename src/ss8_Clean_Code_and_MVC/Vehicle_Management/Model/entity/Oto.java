@@ -4,7 +4,7 @@ public class Oto extends Vehicle {
     private int soChoNgoi;
     private String kieuXe;
 
-    public Oto(String bienKiemSoat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
+    public Oto(String bienKiemSoat, String tenHangSanXuat, String namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
         super(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
         this.soChoNgoi = soChoNgoi;
         this.kieuXe = kieuXe;

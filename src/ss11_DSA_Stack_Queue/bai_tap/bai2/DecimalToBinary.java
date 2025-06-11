@@ -11,7 +11,6 @@ public class DecimalToBinary {
 
         Stack<Integer> stack = new Stack<>();
 
-        // Bước 2-3: Chia lấy dư và đưa vào stack
         if (number == 0) {
             System.out.println("Số nhị phân: 0");
             return;
@@ -23,7 +22,6 @@ public class DecimalToBinary {
             number /= 2;
         }
 
-        // Bước 4: Lấy kết quả từ Stack
         System.out.print("Số nhị phân: ");
         while (!stack.isEmpty()) {
             System.out.print(stack.pop());

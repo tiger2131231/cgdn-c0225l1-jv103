@@ -2,7 +2,7 @@ package ss12_Java_Collection_Framework.bai_tap.Product_Management_Program;
 
 
 public class Product {
-    private int id;
+    private final int id;
     private String name;
     private double price;
 

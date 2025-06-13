@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ProductManager {
 
-    private List<Product> productList = new LinkedList<>();
+    private final List<Product> productList = new LinkedList<>();
 
 
     public void add(Product product) {

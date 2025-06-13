@@ -1,4 +1,4 @@
-package ss10_Java_collection_Framework.bai_tap.bai1;
+package ss10_DSA.bai_tap.bai1;
 
 public class MyArrayList<E> {
     private int size = 0;

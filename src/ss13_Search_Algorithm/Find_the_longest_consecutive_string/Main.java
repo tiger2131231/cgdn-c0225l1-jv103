@@ -25,7 +25,6 @@ public class Main {
                 max.addAll(list);
             }
         }
-
         System.out.print("Chuỗi con liên tiếp tăng dần dài nhất là: ");
         for (Character ch : max) {
             System.out.print(ch);

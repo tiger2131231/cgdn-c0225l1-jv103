@@ -20,23 +20,23 @@ public class Product {
     }
 
     public static Product fromCSV(String line) {
-        String[] parts = line.split(",");
-        return new Product(
-                parts[0],
-                parts[1],
-                Double.parseDouble(parts[2]),
-                parts[3],
-                parts[4]
-        );
+        String[] parts = line.split(",", 5); // Giới hạn tách 5 phần để giữ nguyên mô tả
+        if (parts.length < 5) return null;
+        try {
+            double price = Double.parseDouble(parts[2]);
+            return new Product(parts[0], parts[1], price, parts[3], parts[4]);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
     public String toString() {
         return "Mã: " + id + " | Tên: " + name + " | Giá: " + price +
                 " | Hãng: " + manufacturer + " | Mô tả: " + description;
-    }
-
-    public String getName() {
-        return name;
     }
 }

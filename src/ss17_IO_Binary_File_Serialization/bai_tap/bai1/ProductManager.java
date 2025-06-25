@@ -5,32 +5,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductManager {
-    private final String FILE_PATH = "products.csv";
+    private static final String FILE_PATH = "products.csv";
 
-    // Thêm sản phẩm vào file
-    public void addProduct(Product p) {
-        try (FileWriter fw = new FileWriter(FILE_PATH, true)) {
-            fw.write(p.toCSV() + "\n");
+    public void addProduct(Product product) {
+        try {
+            FileWriter fw = new FileWriter(FILE_PATH, true);
+            fw.write(product.toCSV() + "\n");
+            fw.close();
         } catch (IOException e) {
             System.out.println("Lỗi ghi file: " + e.getMessage());
         }
     }
 
-    // Đọc tất cả sản phẩm từ file
     public List<Product> getAllProducts() {
         List<Product> list = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));
             String line;
             while ((line = br.readLine()) != null) {
-                list.add(Product.fromCSV(line));
+                Product p = Product.fromCSV(line);
+                if (p != null) {
+                    list.add(p);
+                }
             }
+            br.close();
         } catch (IOException e) {
             System.out.println("Lỗi đọc file: " + e.getMessage());
         }
         return list;
     }
 
-    // Tìm sản phẩm theo tên
+    public void displayAll() {
+        List<Product> list = getAllProducts();
+        if (list.isEmpty()) {
+            System.out.println("Danh sách sản phẩm trống.");
+        } else {
+            for (Product p : list) {
+                System.out.println(p);
+            }
+        }
+    }
+
     public void searchByName(String keyword) {
         List<Product> list = getAllProducts();
         boolean found = false;
@@ -40,18 +55,8 @@ public class ProductManager {
                 found = true;
             }
         }
-        if (!found) System.out.println("Không tìm thấy sản phẩm nào.");
-    }
-
-    // Hiển thị tất cả
-    public void displayAll() {
-        List<Product> list = getAllProducts();
-        if (list.isEmpty()) {
-            System.out.println("Danh sách trống.");
-        } else {
-            for (Product p : list) {
-                System.out.println(p);
-            }
+        if (!found) {
+            System.out.println("Không tìm thấy sản phẩm nào với từ khóa \"" + keyword + "\".");
         }
     }
 }

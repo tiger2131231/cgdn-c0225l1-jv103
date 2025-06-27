@@ -1,7 +1,5 @@
 package ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity;
 
-import ss8_Clean_Code_and_MVC.Vehicle_Management.Controller.HangSanXuat;
-
 public class XeTai extends PhuongTien {
     private double trongTai;
 

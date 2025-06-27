@@ -1,5 +1,6 @@
 package ss8_Clean_Code_and_MVC.Vehicle_Management.Controller;
 
+import ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity.HangSanXuat;
 import ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity.Oto;
 import ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity.XeMay;
 import ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity.XeTai;
@@ -39,7 +40,7 @@ public class VehicleController {
 
         System.out.println("Chọn hãng sản xuất:");
         for (int i = 0; i < PhuongTienRepository.hangSanXuatList.size(); i++) {
-            System.out.println((i + 1) + ". " + PhuongTienRepository.hangSanXuatList.get(i));
+            System.out.println((i + 1) + ". " + PhuongTienRepository.hangSanXuatList.get(i).toString());
         }
         int hangIndex = Integer.parseInt(scanner.nextLine()) - 1;
         HangSanXuat hang = PhuongTienRepository.hangSanXuatList.get(hangIndex);

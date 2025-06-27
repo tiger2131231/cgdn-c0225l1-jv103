@@ -1,3 +1,5 @@
+package ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity;
+
 public class HangSanXuat {
     private String maHang;
     private String tenHang;

@@ -1,7 +1,5 @@
 package ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity;
 
-import ss8_Clean_Code_and_MVC.Vehicle_Management.Controller.HangSanXuat;
-
 public abstract class PhuongTien {
     private String bienKiemSoat;
     public HangSanXuat hangSanXuat;
@@ -39,6 +37,6 @@ public abstract class PhuongTien {
 
     @Override
     public String toString() {
-        return "Biển số: " + bienKiemSoat + ", Hãng: " + hangSanXuat + ", Năm SX: " + namSanXuat + ", Chủ sở hữu: " + chuSoHuu;
+        return "Biển số: " + bienKiemSoat + ", Hãng: " + hangSanXuat.toString() + ", Năm SX: " + namSanXuat + ", Chủ sở hữu: " + chuSoHuu;
     }
 }

@@ -1,6 +1,6 @@
 package ss8_Clean_Code_and_MVC.Vehicle_Management.Model.repository;
 
-import ss8_Clean_Code_and_MVC.Vehicle_Management.Controller.HangSanXuat;
+import ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity.HangSanXuat;
 import ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity.PhuongTien;
 
 import java.util.*;

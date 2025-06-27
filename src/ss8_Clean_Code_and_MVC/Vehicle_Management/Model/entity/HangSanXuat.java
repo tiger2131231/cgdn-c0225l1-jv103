@@ -1,5 +1,3 @@
-package ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity;
-
 public class HangSanXuat {
     private String maHang;
     private String tenHang;
@@ -11,16 +9,12 @@ public class HangSanXuat {
         this.quocGia = quocGia;
     }
 
-    public String getMaHang() {
-        return maHang;
-    }
-
     public String getTenHang() {
         return tenHang;
     }
 
-    public String getQuocGia() {
-        return quocGia;
+    public String getMaHang() {
+        return maHang;
     }
 
     @Override
@@ -28,4 +22,3 @@ public class HangSanXuat {
         return tenHang + " (" + quocGia + ")";
     }
 }
-

@@ -1,27 +1,22 @@
 package ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity;
 
-public class Oto extends Vehicle {
+import ss8_Clean_Code_and_MVC.Vehicle_Management.Controller.HangSanXuat;
+import ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity.PhuongTien;
+
+public class Oto extends PhuongTien {
     private int soChoNgoi;
     private String kieuXe;
 
-    public Oto(String bienKiemSoat, String tenHangSanXuat, String namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
-        super(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
+    public Oto(String bienKiemSoat, HangSanXuat hangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
+        super(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu);
         this.soChoNgoi = soChoNgoi;
         this.kieuXe = kieuXe;
     }
 
     @Override
-    public void hienThiThongTin() {
-        System.out.println("Ôtô - Biển: " + bienKiemSoat + ", Hãng: " + tenHangSanXuat +
-                ", Năm: " + namSanXuat + ", Chủ: " + chuSoHuu + ", Kiểu xe: " + kieuXe + ", Số chỗ: " + soChoNgoi);
-    }
-
-    public int getSoChoNgoi() {
-        return soChoNgoi;
-    }
-
-    public String getKieuXe() {
-        return kieuXe;
+    public String layThongTin() {
+        return super.toString() + ", Kiểu xe: " + kieuXe + ", Số chỗ: " + soChoNgoi;
     }
 }
+
 

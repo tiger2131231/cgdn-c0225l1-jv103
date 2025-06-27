@@ -1,21 +1,17 @@
 package ss8_Clean_Code_and_MVC.Vehicle_Management.Model.entity;
 
-public class XeMay extends Vehicle {
-    private int congSuat;
+import ss8_Clean_Code_and_MVC.Vehicle_Management.Controller.HangSanXuat;
 
-    public XeMay(String bienKiemSoat, String tenHangSanXuat, String namSanXuat, String chuSoHuu, int congSuat) {
-        super(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
+public class XeMay extends PhuongTien {
+    private double congSuat;
+
+    public XeMay(String bienKiemSoat, HangSanXuat hangSanXuat, int namSanXuat, String chuSoHuu, double congSuat) {
+        super(bienKiemSoat, hangSanXuat, namSanXuat, chuSoHuu);
         this.congSuat = congSuat;
     }
 
     @Override
-    public void hienThiThongTin() {
-        System.out.println("Xe Máy - Biển: " + bienKiemSoat + ", Hãng: " + tenHangSanXuat +
-                ", Năm: " + namSanXuat + ", Chủ: " + chuSoHuu + ", Công suất: " + congSuat + "cc");
-    }
-
-    public int getCongSuat() {
-        return congSuat;
+    public String layThongTin() {
+        return super.toString() + ", Công suất: " + congSuat;
     }
 }
-
